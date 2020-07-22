@@ -1,25 +1,54 @@
 import React, { useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import auth0 from 'auth0-js';
+import params from './auth0-param.json'
+import './login.css';
+
 const LoginButton = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const onSubmitHandler = () => {};
   var auth0Client = new auth0.WebAuth({
-    clientID: 'EODntLUB9mdPWL1cYEq17U7n90nYSeup',
-    domain: 'dev-zsxk7zyg.us.auth0.com'
+    domain: params.domain,
+    clientID: params.clientId,
+    audience: params.apiAudience,
+    redirectUri: params.callbackUrl,
+    scope: params.scope,
+    responseType: 'token id_token'
   });
 
-  const login=()=>{
+  const [email, setEmail] = useState("bikashdulal150@gmail.com");
+  const [password, setPassword] = useState("Admin@123");
+
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    login(email,password)
+  };
+
+ 
+ 
+ 
+
+ const login=(username,password)=>{
     auth0Client.client.login({
-      realm:'kol-auth',
-      
+      realm:'react-user-demo',
+      username,
+      password
+    },(err,authResult)=>{
+      if(err){
+        console.log(err)
+        alert("Error",err.description)
+        return
+      }
+      if(authResult){
+        console.log(authResult)
+        window.origin=window.location.origin
+      }
+     
     })
   }
   return (
-    <div>
+    <div className='wrapper'>
+    <div className='form-wrapper'>
       <form onSubmit={onSubmitHandler}>
-        <label>
+        <label >
           Email
           <input
             type="email"
@@ -41,6 +70,8 @@ const LoginButton = () => {
         </label>
         <button type="submit">Submit</button>
       </form>
+      
+    </div>
     </div>
   );
 };

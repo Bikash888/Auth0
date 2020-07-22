@@ -1,0 +1,8 @@
+{
+    "domain": "dev-zsxk7zyg.us.auth0.com",
+    "clientId": "nsHaXkmkqK80U7LR0RfAfXhthsUBfxrf",
+    "callbackUrl": "http://localhost:3000",
+    "realm": "react-user-demo",
+    "apiAudience": "https://dev-zsxk7zyg.us.auth0.com/api/v2/",
+    "scope":"read:current_user update:current_user_metadata"
+  }
