@@ -1,0 +1,40 @@
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e8e8e8;
+}
+.login-title {
+  text-align: center;
+  margin: 24px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  color: #262626;
+}
+.form-wrapper {
+  width: 316px;
+  height: 330px;
+  background: #ffffff;
+  margin: 0px 20px;
+  text-align: center;
+}
+label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.container{
+  width: 282px;
+  margin: 0 auto;
+
+}
+.input{
+  border: 1px solid #262626 !important;
+}
+.login-form-button{
+  width: 100% !important;
+}
