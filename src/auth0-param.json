@@ -1,8 +1,8 @@
 {
-    "domain": "dev-zsxk7zyg.us.auth0.com",
-    "clientId": "nsHaXkmkqK80U7LR0RfAfXhthsUBfxrf",
+    "domain": "dev-5gna9-ki.us.auth0.com",
+    "clientId": "3MFohSxZGUm9DKwC12NqJeI1pDiubf13",
     "callbackUrl": "http://localhost:3000",
-    "realm": "react-user-demo",
-    "apiAudience": "https://dev-zsxk7zyg.us.auth0.com/api/v2/",
+    "realm": "demo_db",
+    "apiAudience": "https://dev-5gna9-ki.us.auth0.com/api/v2/",
     "scope":"read:current_user update:current_user_metadata"
   }

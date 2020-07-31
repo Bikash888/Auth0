@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import {Link, Router, Route} from 'react-router-dom'
 import valiadtor from "validator";
 import params from "../auth0-param.json";
 import auth0 from "auth0-js";
@@ -18,7 +17,7 @@ const Login = () => {
     responseType: "token id_token",
   });
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("Admin@123");
+  const [password, setPassword] = useState("");
   const [sending, setSending] = useState(false);
   const [errors, setErrors] = useState({});
   const onSubmitHandler = (e: any) => {
@@ -26,21 +25,7 @@ const Login = () => {
     login(email, password);
   };
 
-  const onResetPasswordHandler = (e: any) => {
-    e.preventDefault();
-    auth0Client.changePassword(
-      {
-        connection: "react-user-demo",
-        email,
-      },
-      (err: any, result: any) => {
-        if (err) {
-          console.log(err);
-        }
-        console.log(result);
-      }
-    );
-  };
+  
 
   const login = (username: any, password: any) => {
     let hasError = false;
@@ -72,7 +57,7 @@ const Login = () => {
     }
     auth0Client.client.login(
       {
-        realm: "react-user-demo",
+        realm: "demo-db",
         username,
         password,
       },
@@ -108,7 +93,10 @@ const Login = () => {
               />
             </Form.Item>
             <Form.Item>
-              <Input.Password className="input" size="large" />
+              <Input.Password className="input" size="large" 
+              value={password}
+              onChange={(e)=>{setPassword(e.target.value)}}
+              />
             </Form.Item>
 
             <Form.Item>
@@ -122,10 +110,9 @@ const Login = () => {
                 Log in
               </Button>
             </Form.Item>
-            <Form.Item>
-              <Route component={ForgotPassword} path="/forgot-passwrod"></Route>
-            </Form.Item>
+          
           </Form>
+          <a href="/reset">forgot password?</a>
         </div>
       </div>
     </div>

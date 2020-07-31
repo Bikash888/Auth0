@@ -27,7 +27,6 @@ const LoginButton = () => {
   const onResetPasswordHandler=(e)=>{
     e.preventDefault();
     auth0Client.changePassword({
-      
       connection:'react-user-demo',
       email
     },(err,result)=>{

@@ -1,15 +1,17 @@
 import React from 'react';
 import Login from './Login/login';
 import './App.css';
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter, Link,Route} from 'react-router-dom';
+import ResetPassword from './Forgot-password/forgot-password';
 
 function App() {
   return (
-    <BrowserRouter>
-    <div>
-        <Login/>
-    </div>
-    </BrowserRouter>
+ 
+   <BrowserRouter>
+     <Route path="/reset" exact component={ResetPassword} />
+     <Route path="/" component={Login} />
+   </BrowserRouter>
+   
   );
 }
 
