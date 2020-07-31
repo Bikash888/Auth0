@@ -4,7 +4,7 @@ import params from "../auth0-param.json";
 import auth0 from "auth0-js";
 import "./login.css";
 import { Input, Form, Button, message } from "antd";
-import ForgotPassword from '../Forgot-password';
+
 import "antd/dist/antd.css";
 
 const Login = () => {
@@ -24,8 +24,6 @@ const Login = () => {
     e.preventDefault();
     login(email, password);
   };
-
-  
 
   const login = (username: any, password: any) => {
     let hasError = false;
@@ -63,11 +61,11 @@ const Login = () => {
       },
       (err: any, authResult: any) => {
         if (err) {
-          message.error(err.description)
+          message.error(err.description);
           return;
         }
         if (authResult) {
-          message.success("Login Successfully")
+          message.success("Login Successfully");
         }
       }
     );
@@ -93,9 +91,13 @@ const Login = () => {
               />
             </Form.Item>
             <Form.Item>
-              <Input.Password className="input" size="large" 
-              value={password}
-              onChange={(e)=>{setPassword(e.target.value)}}
+              <Input.Password
+                className="input"
+                size="large"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
               />
             </Form.Item>
 
@@ -104,13 +106,12 @@ const Login = () => {
                 type="primary"
                 htmlType="submit"
                 className="login-form-button"
-                size='large'
+                size="large"
                 onClick={onSubmitHandler}
               >
                 Log in
               </Button>
             </Form.Item>
-          
           </Form>
           <a href="/reset">forgot password?</a>
         </div>

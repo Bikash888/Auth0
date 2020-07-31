@@ -3,9 +3,6 @@ import "../Forgot-password/reset.css";
 import params from "../auth0-param.json";
 import auth0 from "auth0-js";
 import { Form, Input, Button, message } from "antd";
-import {useHistory} from 'react-router-dom'
-
-
 
 const ForgotPassword = () => {
   var auth0Client = new auth0.WebAuth({

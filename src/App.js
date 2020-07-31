@@ -1,8 +1,8 @@
 import React from 'react';
 import Login from './Login/login';
 import './App.css';
-import {BrowserRouter, Link,Route} from 'react-router-dom';
-import ResetPassword from './Forgot-password/forgot-password';
+import {BrowserRouter,Route} from 'react-router-dom';
+import ResetPassword from '../src/Forgot-password/index';
 
 function App() {
   return (
