@@ -4,7 +4,7 @@ import params from "../auth0-param.json";
 import auth0 from "auth0-js";
 import "./login.css";
 import { Input, Form, Button, message } from "antd";
-import ForgotPassword from '../Forgot-password/forgot-password';
+import ForgotPassword from '../Forgot-password';
 import "antd/dist/antd.css";
 
 const Login = () => {
